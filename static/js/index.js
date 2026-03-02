@@ -44,6 +44,12 @@ function normalizePhone(p) {
 }
 
 recordBtn.addEventListener('click', async () => {
+    const word = document.getElementById('wordDisplay').textContent;
+    // no empty words!
+    if (word == "--") {
+        document.getElementById("error").textContent = "Error: Please select a word";
+        return;
+    }
     if (!recording) {
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         mediaRecorder = new MediaRecorder(stream);
@@ -114,7 +120,7 @@ async function upload() {
     const data = await resp.json();
 
     document.getElementById('score').textContent =
-        `Score: ${data.score.toFixed(1)}%`;
+        `Accuracy: ${data.score.toFixed(1)}%`;
 
     const map = await loadPhonemeMap();
 
