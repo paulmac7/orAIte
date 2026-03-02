@@ -1,0 +1,288 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4e5;
+    /* Light beige */
+    color: #3c4f33;
+    /* Dark green */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Header Styling */
+h1 {
+    font-size: 3rem;
+    color: #4a6d2f;
+    /* Olive green */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 1.2rem;
+    color: #3c4f33;
+    margin-bottom: 20px;
+    line-height: 1;
+    font-style: italic;
+}
+
+/* Input Field Styling */
+#wordInput {
+    padding: 10px;
+    font-size: 1.1rem;
+    border: 2px solid #8a9a5b;
+    /* Sage green border */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 250px;
+    background-color: #e7f1df;
+    /* Soft green background */
+    color: #3c4f33;
+}
+
+#wordInput:focus {
+    outline: none;
+    border-color: #4a6d2f;
+    /* Darker green border when focused */
+}
+
+/* Buttons Styling */
+button {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color: #5a7f46;
+    /* Earthy green */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #4a6d2f;
+    /* Darker green on hover */
+}
+
+#recBtn {
+    background-color: #8a9a5b;
+    /* Lighter green for recording button */
+}
+
+#recBtn:hover {
+    background-color: #7b8e47;
+    /* Slightly darker green on hover */
+}
+
+/* Score Display */
+#score {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #6b6b3c;
+    /* Muted brown */
+}
+
+/* Aligned Text */
+#aligned {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: #6b6b3c;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #wordInput {
+        width: 200px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Quick Div Style */
+.container {
+    background-color: #e7f1df;
+    /* Soft green background */
+    border: 2px solid #8a9a5b;
+    /* Sage green border */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Spacing inside the div */
+    margin: 20px 0;
+    /* Spacing around the div */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    font-size: 1.2rem;
+    /* Font size */
+    color: #3c4f33;
+    /* Dark green text color */
+}
+
+.phoneme {
+    display: inline-block;
+    padding: .2rem .4rem;
+    margin: .1rem;
+    border-radius: 3px;
+    background: #e0ffe0
+}
+
+.bad {
+    background: #ffdddd
+}
+
+#refRow,
+#usrRow {
+    margin-top: 6px;
+}
+
+#refRow::before {
+    content: "Reference: ";
+    font-weight: 700;
+}
+
+#usrRow::before {
+    content: "You: ";
+    font-weight: 700;
+}
+
+.phoneme.gap {
+    opacity: 0.35;
+}
+
+.phoneme {
+    position: relative;
+    cursor: help;
+}
+
+.phoneme[data-ipa]:hover::after {
+    content: "IPA: " attr(data-ipa) "\A" "Example: " attr(data-example);
+    white-space: pre;
+    position: absolute;
+    left: 0;
+    top: 130%;
+    z-index: 1000;
+
+    padding: .4rem .55rem;
+    border-radius: 8px;
+    background: rgba(20, 20, 20, .95);
+    color: white;
+    font-size: 12px;
+    line-height: 1.25;
+    max-width: 240px;
+}
+
+.phoneme[data-ipa]:hover::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 115%;
+    border: 6px solid transparent;
+    border-bottom-color: rgba(20, 20, 20, .95);
+}
+
+.spinner {
+    display: none;
+    /* hidden by default */
+    width: 14px;
+    height: 14px;
+    margin-left: 10px;
+    border: 2px solid rgba(0, 0, 0, .2);
+    border-top-color: rgba(0, 0, 0, .75);
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+    vertical-align: middle;
+}
+
+.spinner.on {
+    display: inline-block;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.layout {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.lang-panel {
+    width: 100%;
+    max-width: 520px;
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, .12);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .7);
+    /* Spacing around the div */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    font-size: 1.2rem;
+
+    display: flex;
+    flex-direction: column;
+    /* title above buttons */
+    gap: 10px;
+
+    position: static;
+    /* remove sticky feel for a top bar */
+}
+
+.lang-panel h3 {
+    margin: 0;
+    font-size: 14px;
+    opacity: .85;
+    text-align: center;
+}
+
+.lang-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.lang-btn {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, .12);
+    color: black;
+    background: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.lang-btn:not(.active):hover {
+    background-color: #ffd5d5;
+}
+
+.lang-btn.active:hover {
+    background-color: white;
+}
+
+.lang-btn.active {
+    border-color: rgba(202, 58, 58, .65);
+    box-shadow: 0 0 0 3px rgba(202, 58, 58, .12);
+}

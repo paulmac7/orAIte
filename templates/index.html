@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>orAIte</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <h1>or<span style="color: #ca3a3a !important;">AI</span>te</h1>
+    <br>
+
+    <div class="lang-panel">
+        <h3>Language</h3>
+        <div class="lang-buttons">
+            <button class="lang-btn active" id="langEn" data-lang="en-US">🇺🇸 English</button>
+            <button class="lang-btn" id="langEs" data-lang="es-ES">🇪🇸 Spanish</button>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <p>Enter a word, press “Start Recording”, try your best to pronounce it, and AI will evaluate your accuracy.</p>
+
+        <p>Your current word is:</p>
+        <h2 id="wordDisplay">--</h2>
+
+        <button id="playWordBtn" disabled>Listen to Word</button>
+        <audio id="wordAudio" controls style="display:none;"></audio>
+
+        <br>
+
+        <input type="text" id="wordInput" placeholder="Enter word">
+        <button id="setWordBtn">Set Word</button>
+
+        <span id="loadingWord" class="spinner" aria-hidden="true"></span>
+
+        <p id="error" style="color: #ca3a3a !important; font-size: 0.85em !important; margin-bottom: 0px !important;"></p>
+
+        <br>
+
+        <button id="recBtn">Start Recording</button>
+
+        <span id="loading" class="spinner" aria-hidden="true"></span>
+
+        <div id="score"></div>
+        <div id="aligned">
+            <div id="refRow"></div>
+            <div id="usrRow"></div>
+        </div>
+
+        <script>
+            window.PHONEME_MAP_URL = "{{ url_for('static', filename='data/sapi_map.json') }}";
+        </script>
+        <script src = "{{ url_for('static', filename='js/index.js') }}"></script>
+    </div>
+</body>
+
+</html>
