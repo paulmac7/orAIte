@@ -161,6 +161,9 @@ async function upload() {
         } else if (step.kind === 'ins') {
             usrSpan.classList.add('bad');
             refSpan.classList.add('gap');
+        } else {
+            refSpan.classList.add('good');
+            usrSpan.classList.add('good');
         }
 
         // timing
@@ -168,9 +171,6 @@ async function upload() {
             refSpan.classList.add('bad');
             usrSpan.classList.add('bad');
         }*/
-
-        refSpan.classList.add('bad');
-        usrSpan.classList.add('bad');
 
         // tooltips
         if (refInfo) {

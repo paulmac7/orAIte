@@ -145,8 +145,20 @@ button:hover {
     background: #e0ffe0
 }
 
-.bad {
-    background: #ffdddd
+.phoneme.good {
+  background: #d7f7df;
+  border-color: #2e9b4f;
+  color: #155d2a;
+}
+
+.phoneme.bad {
+  background: #ffd6d6;
+  border-color: #c0392b;
+  color: #7a1f16;
+}
+
+.phoneme.neutral {
+  opacity: 0.7;
 }
 
 #refRow,
