@@ -4,7 +4,7 @@
     "AH": { "label": "uh", "ipa": "ʌ",  "example": "u in strut" },
     "AO": { "label": "aw", "ipa": "ɔ",  "example": "ough in thought" },
     "AW": { "label": "ow", "ipa": "aʊ", "example": "ow in now" },
-    "AY": { "label": "eye","ipa": "aɪ", "example": "i in five" },
+    "AY": { "label": "ai","ipa": "aɪ", "example": "i in five" },
     "EH": { "label": "eh", "ipa": "ɛ",  "example": "e in bed" },
     "ER": { "label": "er", "ipa": "ɝ",  "example": "ir in bird" },
     "EY": { "label": "ay", "ipa": "eɪ", "example": "ay in say" },
