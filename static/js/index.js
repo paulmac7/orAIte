@@ -77,6 +77,8 @@ setWordBtn.addEventListener('click', async () => {
     // language handler
     const fd = new FormData();
     fd.append('word', word);
+
+    setWordBtn.disabled = true;
     
     const resp = await fetch('/set_word', {
         method: 'POST',
@@ -85,6 +87,9 @@ setWordBtn.addEventListener('click', async () => {
     });
 
     const data = await resp.json();
+
+    setWordBtn.disabled = false;
+    
     loading.classList.remove('on');
     if (resp.ok) {
         // alert(`Reference word set to "${data.word}"`);

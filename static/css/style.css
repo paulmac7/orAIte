@@ -298,3 +298,19 @@ button:hover {
     border-color: rgba(202, 58, 58, .65);
     box-shadow: 0 0 0 3px rgba(202, 58, 58, .12);
 }
+
+button:disabled,
+button[disabled] {
+    opacity: 0.5;              /* fade it */
+    cursor: not-allowed;       /* show it's not clickable */
+    filter: grayscale(40%);    /* optional: desaturate a bit */
+    box-shadow: none;
+}
+
+button:disabled:hover,
+button[disabled]:hover {
+    background-color: #5a7f46; /* same as your normal button bg */
+}
+#recBtn:disabled:hover {
+    background-color: #8a9a5b; /* same as #recBtn normal bg */
+}
