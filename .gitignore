@@ -3,3 +3,6 @@ cache/en-US/*
 !cache/en-US/.gitkeep
 cache/es-ES/*
 !cache/es-ES/.gitkeep
+__pycache__/*
+*.py[cod]
+.DS_Store
